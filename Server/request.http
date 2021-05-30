@@ -1,0 +1,53 @@
+POST  http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "username": "hunghauaa12311",
+    "password": "ansh"
+}
+
+################################
+POST  http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "username": "hunghauaa123111",
+    "password": "ansh"
+}
+
+################################
+GET   http://localhost:3000/delivery-method
+
+################################
+GET   http://localhost:3000/product
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoyOSwidXNlcm5hbWUiOiJodW5naGF1YWExMjMxMTEgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICIsInBhc3N3b3JkIjoiJGFyZ29uMmkkdj0xOSRtPTQwOTYsdD0zLHA9MSRncVJoMndieW0rRlg1YndrSklYc2p3JFNaKy9WUnlVdTJWOGswNzBFdDlJaFB5WS9xNXhZK1ptZTFqM2REV1dJUzQgICAgICIsIm5hbWUiOm51bGwsImdlbmRlciI6bnVsbCwiZW1haWwiOm51bGwsImRhdGVfb2ZfYmlydGgiOm51bGwsImFkZHJlc3MiOm51bGwsInBob25lX251bWJlciI6bnVsbCwiY3JlYXRlX2J5IjpudWxsLCJtb2RpZmllZF9ieSI6bnVsbCwiZGVsZXRlZCI6bnVsbCwidXBkYXRlZF9hdCI6bnVsbCwicm9sZV9pZCI6MX0sImlhdCI6MTYxOTI3NDgxMSwiZXhwIjoxNjE5Mjc2NjExfQ.JO7ZBUJuIdHOqNRZcudAc14rK8FKVoosaab5NLF3llg
+
+{
+    "name": "hunghauaa123111",
+    "email": "ansh"
+}
+
+################################
+PUT        http://localhost:3000/cart/2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoyOSwidXNlcm5hbWUiOiJodW5naGF1YWExMjMxMTEgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICIsInBhc3N3b3JkIjoiJGFyZ29uMmkkdj0xOSRtPTQwOTYsdD0zLHA9MSRncVJoMndieW0rRlg1YndrSklYc2p3JFNaKy9WUnlVdTJWOGswNzBFdDlJaFB5WS9xNXhZK1ptZTFqM2REV1dJUzQgICAgICIsIm5hbWUiOm51bGwsImdlbmRlciI6bnVsbCwiZW1haWwiOm51bGwsImRhdGVfb2ZfYmlydGgiOm51bGwsImFkZHJlc3MiOm51bGwsInBob25lX251bWJlciI6bnVsbCwiY3JlYXRlX2J5IjpudWxsLCJtb2RpZmllZF9ieSI6bnVsbCwiZGVsZXRlZCI6bnVsbCwidXBkYXRlZF9hdCI6bnVsbCwicm9sZV9pZCI6MX0sImlhdCI6MTYxOTI3NDgxMSwiZXhwIjoxNjE5Mjc2NjExfQ.JO7ZBUJuIdHOqNRZcudAc14rK8FKVoosaab5NLF3llg
+
+{          "product_id":2,
+    "quantity":4,
+    "userId":1
+}
+#################
+GET       http://localhost:3000/cart
+
+Content-Type: application/json
+Authorization: Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJ1c2VybmFtZSI6Imh1bmcgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIiwicGFzc3dvcmQiOiIkYXJnb24yaSR2PTE5JG09NDA5Nix0PTMscD0xJDAwR1BNSFg5VEI5VU15bGhhbGprcmckMjdFdmxrbnBFa1AzVno5WG00U3FIbHk5OXNGamtiRW0vY202dHVoNUN1SSAgICAgIiwibmFtZSI6bnVsbCwiZ2VuZGVyIjpudWxsLCJlbWFpbCI6Imh1bmduZDcyQHdydS52biAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIiwiZGF0ZV9vZl9iaXJ0aCI6bnVsbCwiYWRkcmVzcyI6bnVsbCwicGhvbmVfbnVtYmVyIjpudWxsLCJjcmVhdGVfYnkiOm51bGwsIm1vZGlmaWVkX2J5IjpudWxsLCJkZWxldGVkIjpudWxsLCJ1cGRhdGVkX2F0IjpudWxsLCJyb2xlX2lkIjoxfSwiaWF0IjoxNjIyMDQ4OTcxLCJleHAiOjE2MjIwNTA3NzF9.Lw0ckeITkYvrI2mM7lMlV--aecw440PKkJLBRjM2ZQY
+
+{
+    "product_id":1,
+    "quantity":1,
+    "userId":1
+}
+
+
+
