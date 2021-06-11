@@ -35,6 +35,11 @@ Order_detail.init(
       allowNull: true,
       field: "CREATED_BY",
     },
+    createdAt: {
+      type: DataTypes.DATE,
+      allowNull: true,
+      field: "CREATED_AT",
+    },
     modifiedBy: {
       type: DataTypes.INTEGER,
       allowNull: true,

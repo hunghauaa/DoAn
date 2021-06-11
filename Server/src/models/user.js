@@ -28,6 +28,11 @@ User.init(
       allowNull: true,
       field: "NAME",
     },
+    avatar: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      field: "AVATAR",
+    },
     gender: {
       type: DataTypes.STRING,
       allowNull: true,
@@ -69,7 +74,7 @@ User.init(
       field: "DELETED",
     },
     updated_at: {
-      type: DataTypes.DATE,
+      type: DataTypes.STRING,
       allowNull: true,
       field: "UPDATED_AT",
     },

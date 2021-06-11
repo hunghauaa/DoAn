@@ -10,9 +10,13 @@ export function LOGIN(state, payload) {
 }
 export function AUTO_LOGIN(state) {
   const userInfo = localStorage.getItem("userInfo");
+
   if (userInfo) {
     state.userInfo = JSON.parse(userInfo);
   }
+}
+export function SETUSERINFO(state, payload) {
+  state.userInfo.user = { ...state.userInfo.user, ...payload };
 }
 export function LOGOUT(state) {
   localStorage.clear();
@@ -27,4 +31,10 @@ export function setDeliveryMethod(state, payload) {
 }
 export function setOrder(state, payload) {
   state.order = payload;
+}
+export function setCategory(state, payload) {
+  state.category = payload;
+}
+export function setCompany(state, payload) {
+  state.company = payload;
 }

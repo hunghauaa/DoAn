@@ -16,3 +16,9 @@ export function deliveryMethod(state){
 export function getOrder(state){
      return state.order
 }
+export function getCategory(state){
+     return state.category
+}
+export function getCompany(state){
+     return state.company
+}

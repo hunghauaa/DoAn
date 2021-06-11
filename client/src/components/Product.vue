@@ -23,8 +23,8 @@
               <!--style="top: 0; right: 12px; transform: translateY(-50%);"-->
               <!--&gt;</q-btn>-->
 
-              <div class="row no-wrap items-center">
-                <div class="col text-subtitle2 ellipsis-2-lines text-grey-10">
+              <div class="row no-wrap justify-around items-center content-center">
+                <div class="col text-subtitle2 ellipsis-2-lines text-grey-10" style="height: 40px ">
                   {{ product.name }}
                   <q-tooltip
                     content-class="bg-grey text-weight-light"
@@ -43,6 +43,8 @@
             </q-card-section>
 
             <q-card-section class="q-py-xs">
+              <div>
+
               <span style="font-size: 12px; color: grey">Đánh giá:</span>
               <q-rating
                 v-model="ratingModel"
@@ -50,6 +52,8 @@
                 color="orange"
                 readonly
               />
+                            </div>
+
               <span
                 v-show="product.sale"
                 class="text-caption text-red-8 text-weight-bolder"

@@ -15,6 +15,11 @@ Product.init(
       allowNull: true,
       field: "NAME",
     },
+    slug: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      field: "SLUG",
+    },
     code: {
       type: DataTypes.STRING,
       allowNull: true,

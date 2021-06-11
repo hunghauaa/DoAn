@@ -16,7 +16,7 @@ Content-Type: application/json
 }
 
 ################################
-GET   http://localhost:3000/delivery-method
+GET   http://localhost:3000/order
 
 ################################
 GET   http://localhost:3000/product

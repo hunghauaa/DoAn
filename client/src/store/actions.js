@@ -14,6 +14,10 @@ export async function login({ commit }, payload) {
   commit("LOGIN", JSON.stringify(data.data));
   return data;
 }
+export async function acUpdateUser(commit, payload) {
+  const { data } = await http.put(`/user/${payload.id}`, payload);
+  return data;
+}
 export async function registerUser(commit, payload) {
   const { data } = await http.post("/auth/register", payload);
   return data;
@@ -27,8 +31,8 @@ export async function getCart({ commit }) {
   commit("setCart", data.data);
   return data.data;
 }
-export async function acCheckCartExisted(commit,payload){
-  const { data } = await http.get(`/cart/checkCartExisted/${payload.id}`)
+export async function acCheckCartExisted(commit, payload) {
+  const { data } = await http.get(`/cart/checkCartExisted/${payload.id}`);
   // commit('addOrder',data.data)
   return data.data;
 }
@@ -49,30 +53,47 @@ export async function acUpdateCheckoutCart(commit, payload) {
   return data;
 }
 export async function acClearCheckoutCart() {
-    const { data } = await http.put(`/cart/clear-checkout`);
-    // commit('setCart',data.data)
-    return data;
-}
-export async function acGetDeliveryMethod({commit}) {
-  const { data } = await http.get(`/delivery-method`);
-  commit('setDeliveryMethod',data.data)
+  const { data } = await http.put(`/cart/clear-checkout`);
+  // commit('setCart',data.data)
   return data;
 }
-export async function acCreateOrder(commit,payload){
-  const { data } = await http.post(`/order`,payload)
+export async function acGetDeliveryMethod({ commit }) {
+  const { data } = await http.get(`/delivery-method`);
+  commit("setDeliveryMethod", data.data);
+  return data;
+}
+export async function acCreateOrder(commit, payload) {
+  const { data } = await http.post(`/order`, payload);
   // commit('addOrder',data.data)
   return data.data;
 }
-export async function acGetAllOrder({commit}){
-  const { data } = await http.get(`/order`)
-  commit('setOrder',data.data)
+export async function acGetAllOrder({ commit }) {
+  const { data } = await http.get(`/order`);
+  commit("setOrder", data.data);
   return data.data;
 }
-export async function acCreateOrderDetail(commit,payload){
-  const { data } = await http.post(`/order-detail`,payload)
+export async function acCreateOrderDetail(commit, payload) {
+  const { data } = await http.post(`/order-detail`, payload);
   // commit('addOrder',data.data)
   return data.data;
 }
-
-
-  
+export async function acCancelOrder(commit, payload) {
+  const { data } = await http.put(`/order`, payload);
+  // commit('addOrder',data.data)
+  return data.data;
+}
+export async function acGetCategory({ commit }) {
+  const { data } = await http.get(`/category`);
+  commit("setCategory", data.data);
+  return data.data;
+}
+export async function acGetCompany({ commit }) {
+  const { data } = await http.get(`/company`);
+  commit("setCompany", data.data);
+  return data.data;
+}
+export async function acUploadImgUser(commit,payload){
+  const { data } = await http.post(`/user`,payload)
+  // commit('addOrder',data.data)
+  return data.data;
+}

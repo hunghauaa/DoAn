@@ -4,9 +4,9 @@
     <Home />
     <ProductDetail /> -->
     <Header />
-    <keep-alive include="keepCart">
+    <!-- <keep-alive include="keepCart"> -->
     <router-view/>
-    </keep-alive>
+    <!-- </keep-alive> -->
   </div>
 </template>
 

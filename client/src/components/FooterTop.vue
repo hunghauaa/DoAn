@@ -13,7 +13,7 @@
               <div class="input-group">
                 <input
                   type="text"
-                  class=" form-control"
+                  class="form-control"
                   placeholder="Your-email@website.com"
                 />
                 <button
@@ -21,24 +21,15 @@
                   value="Sign up"
                   class="btn btn-large btn-primary"
                 >
-                  <font style="vertical-align: inherit;"
-                    ><font style="vertical-align: inherit;">Đăng ký</font></font
+                  <font style="vertical-align: inherit"
+                    ><font style="vertical-align: inherit">Đăng ký</font></font
                   >
                 </button>
               </div>
             </div>
           </div>
           <div class="col-sm-4">
-            <h5>
-              Theo dõi tôi tại :
-            </h5>
-            <div class="footer-social">
-                  <q-icon name="facebook" style="font-size: 3em"> </q-icon>
-                  <q-icon name="facebook" style="font-size: 3em"> </q-icon>
-                  <q-icon name="facebook" style="font-size: 3em"> </q-icon>
-                  <q-icon name="facebook" style="font-size: 3em"> </q-icon>
-                  <q-icon name="facebook" style="font-size: 3em"> </q-icon>
-            </div>
+            <h5>Theo dõi tôi tại :</h5>
           </div>
         </div>
       </div>
@@ -120,15 +111,15 @@ export default {};
   background-color: #170a8f;
   height: 3rem;
 }
-.footer-social ul {
+/* .footer-social ul {
   display: flex;
   justify-content: space-around;
   align-items: center;
-}
-.footer-social ul li {
+} */
+/* .footer-social ul li {
   list-style: none;
   opacity: 0.5;
-}
+} */
 * {
   font-family: "Playfair Display", serif;
 }
@@ -136,8 +127,7 @@ export default {};
   margin-top: -27px;
   padding-bottom: 20px;
 }
-.facebook:hover{
-    color: blue;
+.facebook:hover {
+  color: blue;
 }
-
 </style>

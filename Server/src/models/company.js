@@ -3,38 +3,38 @@ const { sequelize } = require("../config/config");
 class Company extends Model {}
 Company.init(
   {
-    ID: {
+    id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
-    NAME: {
+    name: {
       type: DataTypes.STRING,
       allowNull: true,
       field: "NAME",
     },
-    ACTIVE: {
+    active: {
       type: DataTypes.BOOLEAN,
       allowNull: true,
       field: "ACTIVE",
     },
-    DESCRIPTION: {
+    description: {
         type: DataTypes.TEXT,
         allowNull: true,
         field: "DESCRIPTION",
       },
-    CREATED_BY: {
+    createdBy: {
       type: DataTypes.INTEGER,
       allowNull: true,
       field: "CREATED_BY",
     },
-    MODIFY_BY: {
+    modifiedBy: {
       type: DataTypes.INTEGER,
       allowNull: true,
       field: "MODIFY_BY",
     },
-    DELETED: {
+    deletedAt: {
       type: DataTypes.DATE,
       allowNull: true,
       field: "DELETED",

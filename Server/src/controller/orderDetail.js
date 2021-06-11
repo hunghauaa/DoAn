@@ -1,4 +1,5 @@
 const Order_detail = require("../models/order_detail");
+const Product = require("../models/products");
 module.exports = {
   createOrderDetail: async (req, res, next) => {
     // const { OrderId, ProductId, quantity, totalMoney, userId } = req.body;
@@ -18,24 +19,27 @@ module.exports = {
         .json({ success: false, message: "server error", error });
     }
   },
-  //   getOrder: async (req, res, next) => {
-  //     const { id } = req.params;
-  //     if (!id)
-  //       return res
-  //         .status(400)
-  //         .json({ success: false, message: "invalid params" });
-  //     try {
-  //       const product = await Product.findOne({ where: { id } });
-  //       return res
-  //         .status(200)
-  //         .json({ success: true, message: "get product successfully", product });
-  //     } catch (error) {
-  //       console.log(error);
-  //       return res
-  //         .status(500)
-  //         .json({ success: false, message: "server error", error });
-  //     }
-  //   },
+  getOrderDetail: async (req, res, next) => {
+    const { id } = req.params;
+    if (!id)
+      return res
+        .status(400)
+        .json({ success: false, message: "invalid params" });
+    try {
+      const data = await Order_detail.findAll({
+        include: Product,
+        where: { OrderId: id },
+      });
+      return res
+        .status(200)
+        .json({ success: true, message: "get product successfully", data });
+    } catch (error) {
+      console.log(error);
+      return res
+        .status(500)
+        .json({ success: false, message: "server error", error });
+    }
+  },
   //   getAllOrder: async (req, res, next) => {
   //     const { userId } = req.params;
   //     try {

@@ -8,6 +8,7 @@ import Checkout from "../pages/CheckOut";
 import Auth from "../components/Auth";
 import store from "../store";
 import Profile from "../pages/Profile";
+import AllProducts from "../pages/AllProducts";
 Vue.use(Router);
 
 const router = new Router({
@@ -40,6 +41,11 @@ const router = new Router({
       name: "profile",
       component: Profile,
       meta: { requiresAuth: true },
+    },
+    {
+      path: "/all-products",
+      name: "all-products",
+      component: AllProducts,
     },
     {
       path: "/auth",

@@ -110,12 +110,12 @@
               @click="addToCart"
               label="Thêm vào giỏ hàng"
             />
-            <q-btn
+            <!-- <q-btn
               class="q-mt-md q-ml-md"
               color="orange-8"
               icon="shopping_cart"
               label="Mua ngay"
-            />
+            /> -->
           </div>
         </div>
       </div>

@@ -8,6 +8,7 @@
       :autoplay="autoplay"
       arrows
       transition-prev="slide-right"
+      height="550px"
       transition-next="slide-left"
       @mouseenter="autoplay = false"
       @mouseleave="autoplay = true"

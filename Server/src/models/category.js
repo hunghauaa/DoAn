@@ -3,33 +3,33 @@ const { sequelize } = require("../config/config");
 class Category extends Model {}
 Category.init(
   {
-    ID: {
+    id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
-    NAME: {
+    name: {
       type: DataTypes.STRING,
       allowNull: true,
       field: "NAME",
     },
-    PARENT_ID: {
+    parentId: {
       type: DataTypes.INTEGER,
       allowNull: true,
       field: "PARENT_ID",
     },
-    CREATED_BY: {
+    createdBy: {
       type: DataTypes.INTEGER,
       allowNull: true,
       field: "CREATED_BY",
     },
-    MODIFY_BY: {
+    modifiedBy: {
       type: DataTypes.INTEGER,
       allowNull: true,
       field: "MODIFY_BY",
     },
-    DELETED: {
+    deletedAt: {
       type: DataTypes.DATE,
       allowNull: true,
       field: "DELETED",

@@ -102,13 +102,15 @@
       </template>
       <template v-slot:body-cell-calories="props">
         <q-td :props="props">
-          <span class="text-strike q-mr-sm " style="opacity: 0.5"
+          <span class="text-strike q-mr-sm" style="opacity: 0.5"
             >₫{{ props.row.Product.origin_price.toLocaleString("de-DE") }}</span
           >
           <span class="text-h6"
             >₫{{
-              (props.row.Product.origin_price -
-              (props.row.Product.origin_price * props.row.Product.sale) / 100).toLocaleString("de-DE")
+              (
+                props.row.Product.origin_price -
+                (props.row.Product.origin_price * props.row.Product.sale) / 100
+              ).toLocaleString("de-DE")
             }}</span
           >
         </q-td>
@@ -117,10 +119,12 @@
         <q-td :props="props">
           <span class="text-orange-10 text-h6"
             >₫{{
-              ((props.row.Product.origin_price -
-                (props.row.Product.origin_price * props.row.Product.sale) /
-                  100) *
-              props.row.quantity).toLocaleString("de-DE")
+              (
+                (props.row.Product.origin_price -
+                  (props.row.Product.origin_price * props.row.Product.sale) /
+                    100) *
+                props.row.quantity
+              ).toLocaleString("de-DE")
             }}</span
           >
         </q-td>
@@ -225,7 +229,12 @@
         <!-- <a><b class="q-ml-xl" @click="deleteAllCart">Xóa</b> </a> -->
       </div>
       <div class="col-md-4 col-sm-4 col-xs-4 text-subtitle1">
-        <b > Tổng thanh toán ({{ itemSelected }} sản phẩm): <span class="text-orange-10"> ₫{{ money.toLocaleString("de-DE") }} </span></b>
+        <b>
+          Tổng thanh toán ({{ itemSelected }} sản phẩm):
+          <span class="text-orange-10">
+            ₫{{ money.toLocaleString("de-DE") }}
+          </span></b
+        >
         <p class="q-pt-md">Tiết kiệm: ₫{{ saving.toLocaleString("de-DE") }}</p>
       </div>
       <div class="col-md-4 col-sm-4 col-xs-4 btn">
@@ -244,7 +253,7 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 import EventBus from "../boot";
 export default {
   props: ["data"],
@@ -312,6 +321,7 @@ export default {
   },
   watch: {},
   computed: {
+    ...mapGetters(["getUserInfo"]),
     tableClass() {
       return this.navigationActive === true ? "shadow-8 no-outline" : void 0;
     },
@@ -330,7 +340,20 @@ export default {
       "acClearCheckoutCart",
     ]),
     async checkout() {
-      if (this.selected.length) {
+      console.log("thi", this.getUserInfo);
+      if (
+        !this.getUserInfo.user.address ||
+        !this.getUserInfo.user.name ||
+        !this.getUserInfo.user.phone_number
+      ) {
+        this.$router.push("/profile");
+        this.$q.notify({
+          message: "Vui lòng điền đầy đủ thông tin trước khi đặt hàng!",
+          color: "orange",
+        });
+        return;
+      }
+      if (this.selected.length > 0) {
         let id = [];
         this.selected.forEach((e) => id.push(e.id));
         console.log("selec", this.selected, id);
@@ -372,6 +395,7 @@ export default {
       }
     },
     selectionRow(details) {
+      console.log("d", details);
       !details.added &&
         details.rows.forEach((e) => {
           console.log("e", e, this.money);
@@ -384,55 +408,11 @@ export default {
             e.quantity *
               (e.Product.origin_price -
                 (e.Product.origin_price * e.Product.sale) / 100);
+          if (this.money < 0) this.money = 0;
+          if (this.saving < 0) this.saving = 0;
         });
       if (details.added) {
-        this.itemSelected = this.itemSelected + details.rows.length;
-      } else {
-        this.itemSelected = this.itemSelected - details.rows.length;
-      }
-    },
-    selectedTableUpdate(newSelected) {
-      console.log("se", this.selected);
-      // this.itemSelected = newSelected.length;
-      // if (this.selected.length) {
-      //   this.selected.forEach((e) => {
-      //     this.money +=
-      //       e.quantity *
-      //       (e.Product.origin_price -
-      //         (e.Product.origin_price * e.Product.sale) / 100);
-      //     this.saving +=
-      //       e.quantity * e.Product.origin_price -
-      //       e.quantity *
-      //         (e.Product.origin_price -
-      //           (e.Product.origin_price * e.Product.sale) / 100);
-      //   });
-      // } else {
-      // newSelected.forEach((e) => {
-      //   this.money +=
-      //     e.quantity *
-      //     (e.Product.origin_price -
-      //       (e.Product.origin_price * e.Product.sale) / 100);
-      //   this.saving +=
-      //     e.quantity * e.Product.origin_price -
-      //     e.quantity *
-      //       (e.Product.origin_price -
-      //         (e.Product.origin_price * e.Product.sale) / 100);
-      // });
-      // }
-      if (this.selected.length < newSelected.length) {
-        let oldVal = newSelected;
-        let newVal = this.selected;
-        let removed = oldVal.filter((p, idx) => {
-          // check if current index exist in new value
-          if (newVal[idx] === undefined) return true;
-          // continue compare old value to new value
-          let j = Object.keys(p).some((prop) => {
-            return p[prop] !== newVal[idx][prop];
-          });
-          return j;
-        });
-        console.log("removed", removed);
-        removed.forEach((e) => {
+        details.rows.forEach((e) => {
           console.log("e", e, this.money);
           this.money +=
             e.quantity *
@@ -444,7 +424,40 @@ export default {
               (e.Product.origin_price -
                 (e.Product.origin_price * e.Product.sale) / 100);
         });
+        this.itemSelected = this.itemSelected + details.rows.length;
+      } else {
+        this.itemSelected = this.itemSelected - details.rows.length;
+        if (this.itemSelected < 0) this.itemSelected = 0;
       }
+    },
+    selectedTableUpdate(newSelected) {
+      // console.log("se", this.selected);
+      // if (this.selected.length < newSelected.length) {
+      //   let oldVal = newSelected;
+      //   let newVal = this.selected;
+      //   let removed = oldVal.filter((p, idx) => {
+      //     // check if current index exist in new value
+      //     if (newVal[idx] === undefined) return true;
+      //     // continue compare old value to new value
+      //     let j = Object.keys(p).some((prop) => {
+      //       return p[prop] !== newVal[idx][prop];
+      //     });
+      //     return j;
+      //   });
+      //   console.log("removed", removed);
+      //   removed.forEach((e) => {
+      //     console.log("e", e, this.money);
+      //     this.money +=
+      //       e.quantity *
+      //       (e.Product.origin_price -
+      //         (e.Product.origin_price * e.Product.sale) / 100);
+      //     this.saving +=
+      //       e.quantity * e.Product.origin_price -
+      //       e.quantity *
+      //         (e.Product.origin_price -
+      //           (e.Product.origin_price * e.Product.sale) / 100);
+      //   });
+      // }
       console.log("new", newSelected);
     },
     async deleteCart(id) {
@@ -483,6 +496,13 @@ export default {
         console.log("data", data);
         if (data.success) {
           --product.quantity;
+          this.money -=
+            product.Product.origin_price -
+            (product.Product.origin_price * product.Product.sale) / 100;
+          this.saving -=
+            product.Product.origin_price -
+            (product.Product.origin_price -
+              (product.Product.origin_price * product.Product.sale) / 100);
         } else {
           this.$q.notify({
             message: "Có lỗi xảy ra",
@@ -505,6 +525,13 @@ export default {
       console.log("data", data);
       if (data.success) {
         ++product.quantity;
+        this.money +=
+          product.Product.origin_price -
+          (product.Product.origin_price * product.Product.sale) / 100;
+        this.saving +=
+          product.Product.origin_price -
+          (product.Product.origin_price -
+            (product.Product.origin_price * product.Product.sale) / 100);
       } else {
         this.$q.notify({
           message: "Có lỗi xảy ra",

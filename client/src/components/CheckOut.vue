@@ -23,19 +23,19 @@
     </div>
     <div class="price q-pa-md q-mt-md">
       <div class="row justify-center items-center content-center">
-        <div class="col-md-4 col-sm-4 col-xs-4">
+        <div class="col-md-4 col-sm-4 col-xs-4 text-subtitle1 text-weight-bold">
           <p>Sản phẩm</p>
         </div>
-        <div class="col-md-2 col-sm-2 col-xs-2">
+        <div class="col-md-2 col-sm-2 col-xs-2 text-subtitle1 text-weight-bold">
           <p>Mô tả</p>
         </div>
-        <div class="col-md-2 col-sm-2 col-xs-2">
+        <div class="col-md-2 col-sm-2 col-xs-2 text-subtitle1 text-weight-bold">
           <p>Đơn giá</p>
         </div>
-        <div class="col-md-2 col-sm-2 col-xs-2">
+        <div class="col-md-2 col-sm-2 col-xs-2 text-subtitle1 text-weight-bold">
           <p>Số lượng</p>
         </div>
-        <div class="col-md-2 col-sm-2 col-xs-2">
+        <div class="col-md-2 col-sm-2 col-xs-2 text-subtitle1 text-weight-bold">
           <p>Thành tiền</p>
         </div>
       </div>
@@ -56,7 +56,7 @@
         </div>
 
         <div class="col-md-2 col-sm-2 col-xs-2">
-          <p>Loại: Kích Thước 60-100cm</p>
+          <p></p>
         </div>
         <div class="col-md-2 col-sm-2 col-xs-2">
           <p>
@@ -90,7 +90,7 @@
         </div>
       </div>
     </div>
-    <div class="price q-pa-md q-mb-md">
+    <div class="price q-pa-md q-mb-md  bg-grey-2">
       <div class="row justify-center items-center content-center">
         <div class="col-md-4 col-sm-4 col-xs-4">
           <span>Lời nhắn:</span>

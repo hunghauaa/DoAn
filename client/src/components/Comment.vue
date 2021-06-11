@@ -39,12 +39,12 @@
         </div>
 
         <q-list dense bordered padding class="no-border q-mt-lg q-pr-xl">
-          <q-item style="padding-left: 0 !important;" v-ripple>
+          <q-item style="padding-left: 0 !important" v-ripple>
             <span class="text-subtitle2 q-mr-xs">5</span>
             <q-icon name="star" size="1.5em" color="orange"></q-icon>
             <q-linear-progress
-              class="q-ml-sm  q-mr-sm"
-              style="margin-top: 5px;"
+              class="q-ml-sm q-mr-sm"
+              style="margin-top: 5px"
               size="13px"
               :value="0.9"
             />
@@ -54,12 +54,12 @@
               >273</span
             >
           </q-item>
-          <q-item style="padding-left: 0 !important;" v-ripple>
+          <q-item style="padding-left: 0 !important" v-ripple>
             <span class="text-subtitle2 q-mr-xs">4</span>
             <q-icon name="star" size="1.5em" color="orange"></q-icon>
             <q-linear-progress
-              class="q-ml-sm  q-mr-sm"
-              style="margin-top: 5px;"
+              class="q-ml-sm q-mr-sm"
+              style="margin-top: 5px"
               size="13px"
               :value="0.6"
             />
@@ -69,12 +69,12 @@
               >&nbsp;&nbsp;69</span
             >
           </q-item>
-          <q-item style="padding-left: 0 !important;" v-ripple>
+          <q-item style="padding-left: 0 !important" v-ripple>
             <span class="text-subtitle2 q-mr-xs">3</span>
             <q-icon name="star" size="1.5em" color="orange"></q-icon>
             <q-linear-progress
-              class="q-ml-sm  q-mr-sm"
-              style="margin-top: 5px;"
+              class="q-ml-sm q-mr-sm"
+              style="margin-top: 5px"
               size="13px"
               :value="0.1"
             />
@@ -84,12 +84,12 @@
               >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6</span
             >
           </q-item>
-          <q-item style="padding-left: 0 !important;" v-ripple>
+          <q-item style="padding-left: 0 !important" v-ripple>
             <span class="text-subtitle2 q-mr-xs">2</span>
             <q-icon name="star" size="1.5em" color="orange"></q-icon>
             <q-linear-progress
-              class="q-ml-sm  q-mr-sm"
-              style="margin-top: 5px;"
+              class="q-ml-sm q-mr-sm"
+              style="margin-top: 5px"
               size="13px"
               :value="0.1"
             />
@@ -99,12 +99,12 @@
               >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3</span
             >
           </q-item>
-          <q-item style="padding-left: 0 !important;" v-ripple>
+          <q-item style="padding-left: 0 !important" v-ripple>
             <span class="text-subtitle2 q-mr-xs">1</span>
             <q-icon name="star" size="1.5em" color="orange"></q-icon>
             <q-linear-progress
-              class="q-ml-sm  q-mr-sm"
-              style="margin-top: 5px;"
+              class="q-ml-sm q-mr-sm"
+              style="margin-top: 5px"
               size="13px"
               :value="0.1"
             />
@@ -119,14 +119,218 @@
       <div
         class="col-lg-7 col-md-7 col-sm-12 col-xs-12 q-pl-lg relative-position"
       >
-        <p>sa</p>
-        <p>á</p>
-        <p>sa</p>
-        <p>á</p>
-        <p>sa</p>
-        <p>á</p>
-        <p>sa</p>
-        <p>á</p>
+        <div style="overflow: auto; height: 300px">
+          <q-item>
+            <q-item-section top avatar>
+              <q-avatar
+                ><img src="https://cdn.quasar.dev/img/boy-avatar.png"
+              /></q-avatar>
+            </q-item-section>
+
+            <q-item-section>
+              <q-item-label>Nguyễn Doãn Hưng</q-item-label>
+              <q-item-label
+                caption
+                lines="2"
+                style="
+                  word-break: break-word !important;
+                  word-spacing: revert !important;
+                  white-space: normal !important;
+                  overflow: auto;
+                  display: block;
+                "
+                >Secondary line text. Lorem ipsum dolor sit amet, consectetur
+                adipiscit
+                elit.sadassaddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</q-item-label
+              >
+            </q-item-section>
+
+            <q-item-section side top>
+              <q-item-label caption>5 min ago</q-item-label>
+              <q-icon name="star" color="yellow" />
+            </q-item-section>
+          </q-item>
+          <q-item>
+            <q-item-section top avatar>
+              <q-avatar
+                ><img src="https://cdn.quasar.dev/img/boy-avatar.png"
+              /></q-avatar>
+            </q-item-section>
+
+            <q-item-section>
+              <q-item-label>Nguyễn Doãn Hưng</q-item-label>
+              <q-item-label
+                caption
+                lines="2"
+                style="
+                  word-break: break-word !important;
+                  word-spacing: revert !important;
+                  white-space: normal !important;
+                  overflow: auto;
+                  display: block;
+                "
+                >Secondary line text. Lorem ipsum dolor sit amet, consectetur
+                adipiscit
+                elit.sadassaddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</q-item-label
+              >
+            </q-item-section>
+
+            <q-item-section side top>
+              <q-item-label caption>5 min ago</q-item-label>
+              <q-icon name="star" color="yellow" />
+            </q-item-section>
+          </q-item>
+          <q-item>
+            <q-item-section top avatar>
+              <q-avatar
+                ><img src="https://cdn.quasar.dev/img/boy-avatar.png"
+              /></q-avatar>
+            </q-item-section>
+
+            <q-item-section>
+              <q-item-label>Nguyễn Doãn Hưng</q-item-label>
+              <q-item-label
+                caption
+                lines="2"
+                style="
+                  word-break: break-word !important;
+                  word-spacing: revert !important;
+                  white-space: normal !important;
+                  overflow: auto;
+                  display: block;
+                "
+                >Secondary line text. Lorem ipsum dolor sit amet, consectetur
+                adipiscit
+                elit.sadassaddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</q-item-label
+              >
+            </q-item-section>
+
+            <q-item-section side top>
+              <q-item-label caption>5 min ago</q-item-label>
+              <q-icon name="star" color="yellow" />
+            </q-item-section>
+          </q-item>
+          <q-item>
+            <q-item-section top avatar>
+              <q-avatar
+                ><img src="https://cdn.quasar.dev/img/boy-avatar.png"
+              /></q-avatar>
+            </q-item-section>
+
+            <q-item-section>
+              <q-item-label>Nguyễn Doãn Hưng</q-item-label>
+              <q-item-label
+                caption
+                lines="2"
+                style="
+                  word-break: break-word !important;
+                  word-spacing: revert !important;
+                  white-space: normal !important;
+                  overflow: auto;
+                  display: block;
+                "
+                >Secondary line text. Lorem ipsum dolor sit amet, consectetur
+                adipiscit
+                elit.sadassaddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</q-item-label
+              >
+            </q-item-section>
+
+            <q-item-section side top>
+              <q-item-label caption>5 min ago</q-item-label>
+              <q-icon name="star" color="yellow" />
+            </q-item-section>
+          </q-item>
+          <q-item>
+            <q-item-section top avatar>
+              <q-avatar
+                ><img src="https://cdn.quasar.dev/img/boy-avatar.png"
+              /></q-avatar>
+            </q-item-section>
+
+            <q-item-section>
+              <q-item-label>Nguyễn Doãn Hưng</q-item-label>
+              <q-item-label
+                caption
+                lines="2"
+                style="
+                  word-break: break-word !important;
+                  word-spacing: revert !important;
+                  white-space: normal !important;
+                  overflow: auto;
+                  display: block;
+                "
+                >Secondary line text. Lorem ipsum dolor sit amet, consectetur
+                adipiscit
+                elit.sadassaddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</q-item-label
+              >
+            </q-item-section>
+
+            <q-item-section side top>
+              <q-item-label caption>5 min ago</q-item-label>
+              <q-icon name="star" color="yellow" />
+            </q-item-section>
+          </q-item>
+          <q-item>
+            <q-item-section top avatar>
+              <q-avatar
+                ><img src="https://cdn.quasar.dev/img/boy-avatar.png"
+              /></q-avatar>
+            </q-item-section>
+
+            <q-item-section>
+              <q-item-label>Nguyễn Doãn Hưng</q-item-label>
+              <q-item-label
+                caption
+                lines="2"
+                style="
+                  word-break: break-word !important;
+                  word-spacing: revert !important;
+                  white-space: normal !important;
+                  overflow: auto;
+                  display: block;
+                "
+                >Secondary line text. Lorem ipsum dolor sit amet, consectetur
+                adipiscit
+                elit.sadassaddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</q-item-label
+              >
+            </q-item-section>
+
+            <q-item-section side top>
+              <q-item-label caption>5 min ago</q-item-label>
+              <q-icon name="star" color="yellow" />
+            </q-item-section>
+          </q-item>
+          <q-item>
+            <q-item-section top avatar>
+              <q-avatar
+                ><img src="https://cdn.quasar.dev/img/boy-avatar.png"
+              /></q-avatar>
+            </q-item-section>
+
+            <q-item-section>
+              <q-item-label>Single line item</q-item-label>
+              <q-item-label
+                caption
+                lines="2"
+                style="
+                  word-break: break-word !important;
+                  word-spacing: revert !important;
+                  white-space: normal !important;
+                  overflow: auto;
+                  display: block;
+                "
+                >Secondary line text. Lorem ipsum dolor sit amet, consectetur
+                adipiscit
+                elit.sadassaddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</q-item-label
+              >
+            </q-item-section>
+
+            <q-item-section side top>
+              <q-item-label caption>5 min ago</q-item-label>
+              <q-icon name="star" color="yellow" />
+            </q-item-section>
+          </q-item>
+        </div>
 
         <!-- <div class="column">
             đá
@@ -153,7 +357,7 @@ export default {
   data() {
     return {
       rating_point: 4.2,
-      text:null
+      text: null,
     };
   },
 };
